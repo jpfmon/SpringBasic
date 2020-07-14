@@ -1,12 +1,16 @@
 package com.montojo.springdemo;
 
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
 
     public static void main(String[] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//        Commenting out to use Java code configuration
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
         Coach myCoach = context.getBean("myBaseballCoach",Coach.class);
         Coach myCoach2 = context.getBean("myBaseballCoach",Coach.class);
