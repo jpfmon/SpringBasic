@@ -3,10 +3,10 @@ package com.montojo.springdemo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class HappyFortuneService implements FortuneService {
+public class SadFortuneService implements FortuneService {
 
     @Override
     public String getFortune() {
-        return "Lucky day!";
+        return "Bad day!";
     }
 }
