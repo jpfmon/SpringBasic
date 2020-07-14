@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="myFortuneService" class="com.montojo.springdemo.HappyFortuneService"/>
+
+    <bean id="myTrackCoach" class="com.montojo.springdemo.TrackCoach">
+    <property name="fortuneService" ref="myFortuneService"/>
+        <property name="name" value="Track Coach"/>
+    </bean>
+
+
+    <bean id="myBaseballCoach" class="com.montojo.springdemo.BaseballCoach">
+        <constructor-arg ref="myFortuneService"/>
+    </bean>
+
+</beans>
